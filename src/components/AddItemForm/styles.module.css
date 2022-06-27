@@ -1,0 +1,15 @@
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
+.root textarea,
+.root input,
+.root select {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    border-radius: 5px;
+    margin: 12px 0;
+    padding: 15px 10px;
+    font-family: Roboto;
+}

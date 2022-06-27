@@ -1,0 +1,13 @@
+.root {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.col {
+    background: #F2F2F2;
+    padding: 25px 80px 40px;
+}
+
+.gray {
+    background: #C4C4C4;
+}
