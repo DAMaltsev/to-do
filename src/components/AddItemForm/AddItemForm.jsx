@@ -12,6 +12,10 @@ const validate = values => {
         errors.title = "Min length is 2 symbols"
     }
 
+    if(!values.data) {
+        errors.data = "Please select a day"
+    }
+
     return errors;
 }
 
@@ -20,7 +24,7 @@ const AddItemForm = () => {
         initialValues: {
             title: '',
             description: '',
-            data: 'Today',
+            data: '',
         },
         validate,
         onSubmit: values => console.log(JSON.stringify(values, null , 2))
@@ -31,10 +35,11 @@ const AddItemForm = () => {
         <input value={formik.values.title} onChange={formik.handleChange} onBlur={formik.handleBlur} name="title" type="text" placeholder="TITLE"/>
         {formik.errors.title && formik.touched.title ? <div>{formik.errors.title}</div> : null}
         <textarea value={formik.values.description} onChange={formik.handleChange} onBlur={formik.handleBlur} name="description" cols="30" rows="10" placeholder="DESCRIPTION"></textarea>
-        <select name="data" id="" value={formik.values.data} onChange={formik.handleChange}>
+        <select name="data" id="" value={formik.values.data} onBlur={formik.handleBlur} onChange={formik.handleChange}>
             <option value="Today">Today</option>
             <option value="Tomorrow">Tomorrow</option>
         </select>
+        {formik.errors.data && formik.touched.data ? <div>{formik.errors.data}</div> : null}
         <button type="submit">Add</button>
     </form>
     )

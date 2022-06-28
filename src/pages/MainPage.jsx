@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import AddItemForm from "../components/AddItemForm/AddItemForm";
+import TasksListContainer from "../containers/TasksList/TasksList";
 
 const MainPage = () => {
     return(
@@ -12,6 +13,7 @@ const MainPage = () => {
             </div>
             <div className={classNames(styles.col, styles.gray)}>
             <h2 className={styles.heading}>My today todo</h2>
+                <TasksListContainer />
             </div>
             <div className={styles.col}>
             <h2 className={styles.heading}>My tomorrow todo</h2>
